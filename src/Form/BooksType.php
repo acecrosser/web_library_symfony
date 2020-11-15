@@ -11,7 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class BooksType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): string
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('title', TextType::class, [
@@ -25,7 +25,7 @@ class BooksType extends AbstractType
         ;
     }
 
-    public function configureOptions(OptionsResolver $resolver): string
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
             'data_class' => Books::class,

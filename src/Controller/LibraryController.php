@@ -49,7 +49,7 @@ class LibraryController extends AbstractController
     /**
      * @Route("/library/book/{slug}", name="book_show")
      */
-    public function book(Books $book)
+    public function book(Books $book): object
     {
         return $this->render('library/book.html.twig', [
             'book' => $book,
@@ -59,7 +59,7 @@ class LibraryController extends AbstractController
     /**
      * @Route("/library/new", name="new_book")
      */
-    public function addBook(Request $request, SlugifyInterface $slugify)
+    public function addBook(Request $request, SlugifyInterface $slugify): object 
     {
         $book = new Books();
         $form = $this->createForm(BooksType::class, $book);
@@ -83,7 +83,7 @@ class LibraryController extends AbstractController
     /**
      * @Route("/library/{slug}/edit", name="edit_book")
      */
-    public function editBook(Request $request, Books $book, SlugifyInterface $slugify)
+    public function editBook(Request $request, Books $book, SlugifyInterface $slugify): object
     {
         $form = $this->createForm(BooksType::class, $book);
 
