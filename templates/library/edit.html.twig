@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New book | Web library{% endblock %}
+
+{% block body %}
+<div class="offset-md-1 col-md-10">
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.title) }}
+        {{ form_widget(form.title, {'attr': {'class': 'form-control mb-3'}}) }}
+        {{ form_label(form.author) }}
+        {{ form_widget(form.author, {'attr': {'class': 'form-control mb-3'}}) }}
+        {{ form_label(form.year) }}
+        {{ form_widget(form.year, {'attr': {'class': 'form-control mb-3'}}) }}
+        {{ form_label(form.body) }}
+        {{ form_widget(form.body, { 'attr': {
+            'rows' : '10',
+            'cols' : '100',
+            'class': 'form-control' }}) }}
+    </div>
+    <button class="btn btn-danger" type="submit">Редактировать</button>
+    {{ form_end(form) }}
+</div>
+{% endblock %}

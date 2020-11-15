@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Web library{% endblock %}
+
+{% block body %}
+    <p><h3><b>{{ book.title }}</b></h3></p>
+    Год издания: {{ book.year }}<br>
+    Имя автор: {{ book.author }}<br><br>
+    <p>{{ book.body }}</p>
+
+    <a href="{{ path('edit_book', {'slug': book.slug}) }}"><button class="btn btn-danger">Редактировать</button></a>
+{% endblock %}

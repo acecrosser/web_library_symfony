@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Web library{% endblock %}
+
+{% block body %}
+    <h2>Список всех книг</h2>
+    <ul class="list-group list-group-flush">
+    {% for book in books %}
+       <li class="list-group-item"><a href="{{ path('book_show', {'slug': book.slug}) }}">{{ book.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
