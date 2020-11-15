@@ -9,9 +9,10 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
+
 class BooksType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): array
     {
         $builder
             ->add('title', TextType::class, [
@@ -21,14 +22,17 @@ class BooksType extends AbstractType
             ->add('year', TextType::class,['label' => 'Год издания'])
             ->add('body', TextareaType::class, [
                 'label' => 'Краткое описание содержания...'
-            ])
-        ;
+            ]);
+
+        return $options;
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): object
     {
         $resolver->setDefaults([
             'data_class' => Books::class,
         ]);
+
+        return $resolver; 
     }
 }
