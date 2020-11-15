@@ -83,7 +83,7 @@ class LibraryController extends AbstractController
     /**
      * @Route("/library/{slug}/edit", name="edit_book")
      */
-    public function editBook(Request $request, Books $book)
+    public function editBook(Request $request, Books $book, SlugifyInterface $slugify)
     {
         $form = $this->createForm(BooksType::class, $book);
 
@@ -91,6 +91,8 @@ class LibraryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var Books $book */
             $book = $form->getData();
+            $book->setSlug($slugify->slugify($book->getTitle()));
+            $book->setCreated(new \DateTime());
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($book);
