@@ -19,12 +19,12 @@ class AppFixtures extends Fixture
         $this->slug = $slugify;
     }
 
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): string
     {
         $this->loadBooks($manager);
     }
 
-    public function loadBooks(ObjectManager $manager)
+    public function loadBooks(ObjectManager $manager): string
     {
         for ($i = 1; $i < 20; $i++) {
             $book = new Books();
