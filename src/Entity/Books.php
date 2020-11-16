@@ -33,7 +33,7 @@ class Books
     private $year;
 
     /**
-     * @ORM\Column(type="text", nullable=false)
+     * @ORM\Column(type="integer", nullable=false)
      */
     private $body;
 
