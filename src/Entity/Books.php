@@ -28,12 +28,12 @@ class Books
     private $author;
 
     /**
-     * @ORM\Column(type="string", nullable=false)
+     * @ORM\Column(type="integer", nullable=false)
      */
     private $year;
 
     /**
-     * @ORM\Column(type="integer", nullable=false)
+     * @ORM\Column(type="string", nullable=false)
      */
     private $body;
 
