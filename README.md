@@ -7,15 +7,19 @@
 * MySQL
 
 Для начала, создаем любую папку на локальном ПК:
+
 `mkdir name_dir`
 
 Переходим в папку:
+
 `cd name_dir`
 
 Через git делаем клонирование репозитория:
+
 `git clone https://github.com/acecrosser/web_library_symfony.git`
 
 Переходим в папку проекта:
+
 `cd web_library_symfony`
 
 Устанавливаем все зависимости через Composer:
